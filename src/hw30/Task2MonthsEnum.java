@@ -13,7 +13,7 @@ public class Task2MonthsEnum {
     // Все значения перечисляются по одному в строке через запятую,
     // пишутся ЗАГЛАВНЫМИ_БУКВАМИ и могут быть любыми (но важно, что разными);
     // порядок значений важен - Java его запоминает и использует.
-    private enum Month {
+    public enum Month {
         JANUARY,
         FEBRUARY,
         MARCH,
@@ -28,7 +28,7 @@ public class Task2MonthsEnum {
         DECEMBER,
     }
 
-    private enum Season {//вот часть дз
+    public enum Season {//вот часть дз
         WINTER,
         SPRING,
         SUMMER,
