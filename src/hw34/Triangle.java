@@ -1,20 +1,20 @@
 package hw34;
 
 public class Triangle {
-    private int side1;
-    private int side2;
-    private int side3;
+    private int sideA;
+    private int sideB;
+    private int sideC;
 
-    public Triangle(int side1, int side2, int side3) {
-        if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+    public Triangle(int sideA, int sideB, int sideC) {
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
             throw new IllegalArgumentException("Значения сторон треугольника должны быть положительными.");
         }
-        if (!checkSides(side1, side2, side3)) {
+        if (!checkSides(sideA, sideB, sideC)) {
             throw new IllegalArgumentException("Невозможно создать треугольник с заданными сторонами.");
         }
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
     }
 
     public static boolean checkSides(int a, int b, int c) {
