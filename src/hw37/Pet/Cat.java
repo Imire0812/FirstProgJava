@@ -1,6 +1,6 @@
-package hw37;
+package hw37.Pet;
 
-public class Cat  extends Pet{
+public class Cat  extends Pet {
     public Cat(String name){
         super(name);
     }

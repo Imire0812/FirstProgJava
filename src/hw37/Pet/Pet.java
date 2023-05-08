@@ -1,4 +1,4 @@
-package hw37;
+package hw37.Pet;
 
 public class Pet {
     public  String name;
@@ -7,7 +7,6 @@ public class Pet {
         this.name = name;
     }
     public  String getName(){
-        System.out.println();
         return name;
     }
     public void setName(String name){
