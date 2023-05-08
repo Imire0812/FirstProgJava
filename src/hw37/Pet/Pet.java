@@ -1,4 +1,4 @@
-package hw37;
+package hw37.Pet;
 
 public class Pet {
     public  String name;

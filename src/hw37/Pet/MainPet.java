@@ -1,4 +1,4 @@
-package hw37;
+package hw37.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
