@@ -7,7 +7,6 @@ public class Pet {
         this.name = name;
     }
     public  String getName(){
-        System.out.println();
         return name;
     }
     public void setName(String name){
