@@ -1,4 +1,4 @@
-package hw38;
+package hw38.student;
 
 import java.util.Scanner;
 

@@ -1,6 +1,4 @@
-package hw38;
-
-import java.util.Scanner;
+package hw38.student;
 
 public class Student {
     private String name;
