@@ -35,4 +35,8 @@ public class Student {
         }
         return name.equals(student.getName()) && age == student.getAge();
     }
+    @Override
+    public int hashCode(){
+        return name.hashCode() + age;
+    }
 }
