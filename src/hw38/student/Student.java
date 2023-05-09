@@ -2,6 +2,7 @@ package hw38.student;
 
 public class Student {
     private String name;
+    private Integer age;
 
     public Student(String name) {
         this.name = name;
@@ -15,10 +16,16 @@ public class Student {
         return name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return "Студент по имени " + name;
     }
+
+    @Override
     public boolean equals(Object obj){
         if (this == obj){
             return true;
@@ -26,6 +33,6 @@ public class Student {
         if (!(obj instanceof  Student student)){
             return false;
         }
-        return name.equals(student.getName());
+        return name.equals(student.getName()) && age == student.getAge();
     }
 }
