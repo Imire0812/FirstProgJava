@@ -9,6 +9,9 @@ public class PrivateHouse extends House{
     public String toString() {
         return "Private house at " + getAddress();
     }
+    public void destroy(){
+        System.out.println("You have destroyed a private house");
+    }
 
 
 }
