@@ -19,5 +19,9 @@ public class Apartment extends House {
     public String toString() {
         return "Apartment building at " + getAddress() + " with " +
                 numEntrances + " entrances ";
+
+    }
+    public void destroy() {
+        System.out.printf("You have destroyed an apartment building with %d entrances\n", numEntrances);
     }
 }

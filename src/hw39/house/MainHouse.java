@@ -11,7 +11,7 @@ public class MainHouse {
 
         for (House house : houses) {
             System.out.println(house.toString());
+            house.destroy();
         }
     }
-
 }
