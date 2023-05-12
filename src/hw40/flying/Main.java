@@ -39,11 +39,10 @@ public class Main {
         System.out.println("Main.makeThemFly(flyable=" + flyable + ")");
         for (CanFly flyableObject : flyable) {
             System.out.println(flyableObject + ".fly()");
-            flyableObject.fly(); // команда "лети!"
+            flyableObject.fly();
         }
     }
 
-    // метод "заставь бежать"
     private static void makeThemRun(List<CanRun> runnable) {
         System.out.println("Main.makeThemRun(runnable=" + runnable + ")");
         for (CanRun runnableObject : runnable) {
