@@ -1,11 +1,18 @@
 package hw40.Tolk;
 
 public interface Dialog {
-    void greeting();
+
+    String readName();
+
+    String greeting();
+
     String askAboutDistrict();
-    int age();
-    String title();
-    String clothes();
+
     String askAboutLocation();
+
+    String askAboutPosition();
+
+    String askAboutPhone();
+
     void result();
 }
