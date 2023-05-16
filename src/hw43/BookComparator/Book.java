@@ -1,11 +1,11 @@
-package hw42.Book;
+package hw43.BookComparator;
 
 import java.util.Objects;
 
 public class Book implements Comparable<Book> {
     public String author;
     public String title;
-    private int pages;
+    public int pages;
 
     public Book(String author, String title, int pages) {
         this.author = author;
@@ -20,10 +20,10 @@ public class Book implements Comparable<Book> {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Book)) {
+        if (!(obj instanceof hw42.Book.Book)) {
             return false;
         }
-        Book other = (Book) obj;
+        hw42.Book.Book other = (hw42.Book.Book) obj;
         return this.author.equals(other.author) && this.title.equals(other.title);
     }
 
@@ -39,4 +39,16 @@ public class Book implements Comparable<Book> {
         }
         return this.author.compareTo(other.author);
     }
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
 }
