@@ -10,6 +10,28 @@ import java.util.Scanner;
 
 public class Pizza {
 
+    public void getTitle(String title) {
+        this.title = title;
+    }
+
+    public void getSize(Size size) {
+        this.size = size;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setCheesyBorder(boolean cheesyBorder) {
+        this.cheesyBorder = cheesyBorder;
+    }
+    public boolean hasCheesyBorder() {
+        return cheesyBorder;
+    }
+
     private enum Size {
         SMALL,
         MEDIUM,
@@ -17,14 +39,6 @@ public class Pizza {
     }
 
     private static final double CHEESY = 1.5;
-    //  private static final List<String> titles = new ArrayList<>();
-//  static {
-//    titles.add("Capricciosa");
-//    titles.add("Vesuvio");
-//    titles.add("Margarita");
-//    titles.add("Diablo");
-//  }
-    // по-взрослому: Map<String, Map<Size, Double>> prices;
     private static final Map<String, Map<Size, Double>> prices = new HashMap<>();
     private static final List<String> titles;
 
@@ -55,10 +69,9 @@ public class Pizza {
         titles = new ArrayList<>(prices.keySet());
         Collections.sort(titles);
     }
-
-    private final String title;
-    private final Size size;
-    private final boolean cheesyBorder;
+    private String title;
+    private Size size;
+    private boolean cheesyBorder;
     private final double price;
 
     public Pizza(String title, Size size, boolean cheesyBorder) {
@@ -75,7 +88,6 @@ public class Pizza {
         }
         this.price = price;
     }
-
     // - для каждой пиццы:
     //   - выбор пиццы
     //   - выбор размера
@@ -108,11 +120,9 @@ public class Pizza {
 
         return new Pizza(title, size, cheesyBoard);
     }
-
     public double getPrice() {
         return price;
     }
-
     @Override
     public String toString() {
         return String.format("%s (%s, сырный борт: %s) = %.2f EUR", title, size, cheesyBorder, price);
