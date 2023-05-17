@@ -5,38 +5,42 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    // аппарат по продаже пиццы
     public static void main(String[] args) {
-        String command;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("=== Sell pizza ===");
-        List<Order> orders = new ArrayList<>();
-        Order current = new Order();
-        System.out.println("Command:");
-        System.out.println("1. Add pizza:");
-        System.out.println("2. Finish order:");
-        System.out.println("0. Close");
 
-        command = scanner.nextLine();
-        scanner.nextLine();
-        switch (command){
-            case "1" -> {
-                current.addPizza(scanner);
-            }
-            case "2" -> {
-                if(!current.ifEmpty()){
-                    orders.add(current);
-                    current = new Order();
+        System.out.println("=== Продажа пиццы ===");
+        List<Order> orders = new ArrayList<>(); // завершённые заказы
+        Order current = new Order(); // текущий заказ
+
+        String command;
+        do { // здесь начинается тело цикла - то, что мы будем повторять, пока не введут "0"
+            System.out.println("Команды:");
+            System.out.println("1. Добавить пиццу");
+            System.out.println("2. Начать новый заказ");
+            System.out.println("0. Выход");
+            System.out.print("Выберите команду: ");
+
+            command = scanner.nextLine();
+            switch (command) {
+                case "1" -> current.addPizza(scanner); // добавить пиццу в текущий заказ
+                case "2", "0" -> {
+                    if (!current.isEmpty()) {
+                        orders.add(current); // "старый текущий" заказ отправляю в завершённые
+                        current = new Order(); // "текущий заказ" - теперь новый заказ
+                    }
                 }
+                default -> System.out.println("Некорректная команда: " + command);
             }
-            case "0" -> System.out.println("By by");
-            default -> System.out.println("Not correct command " + command);
-
         } while (!command.equals("0"));
+        // продолжить выход из программы
+        System.out.println("=== Завершённые заказы ===");
         double total = 0.0;
-        for (Order order : orders){
+        for (Order order : orders) {
             System.out.println(order);
             total += order.getTotal();
         }
-        System.out.println("Total " + total);
+        System.out.printf("Общий итог: %.2f EUR%n", total);
     }
 }

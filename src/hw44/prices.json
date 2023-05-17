@@ -1,0 +1,12 @@
+{
+      "Capricciosa": {
+        "SMALL": 7.5,
+        "MEDIUM": 9.0,
+        "LARGE": 11.0
+      },
+     "Diablo": {
+        "SMALL": 7,
+        "MEDIUM": 9,
+        "LARGE": 10.5
+      }
+    }
