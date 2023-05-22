@@ -1,4 +1,6 @@
-package hw44;
+package hw44.Pizza;
+
+import hw44.Pizza.Pizza;
 
 import java.util.Comparator;
 

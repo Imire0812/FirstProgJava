@@ -1,4 +1,4 @@
-package hw44;
+package hw44.Pizza;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;

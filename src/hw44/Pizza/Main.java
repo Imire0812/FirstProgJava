@@ -1,4 +1,4 @@
-package hw44;
+package hw44.Pizza;
 
 import java.util.ArrayList;
 import java.util.List;
