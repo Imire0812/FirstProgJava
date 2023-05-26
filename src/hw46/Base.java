@@ -2,9 +2,7 @@ package hw46;
 
 import javax.swing.text.AbstractDocument;
 import java.text.ParseException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Base {
     private final Map<Integer, Order> orders = new HashMap<>();
@@ -36,5 +34,11 @@ public class Base {
             throw new RuntimeException("Заказ с id " + orderId + " уже существует");
         }
         orders.put(orderId, order);
+    }
+    public void printOrders(){
+        List<Order> orders = new ArrayList<>(this.orders.values());
+        for (Order order : orders){
+            System.out.println(order);
+        }
     }
 }

@@ -6,17 +6,22 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Order {
+
+    // Заказ:
+    // - ID // число
+    // - описание букета // строка (без переносов)
+    // - дата доставки // ДД.ММ.ГГГГ ЧЧ:ММ
     private static final String SEP = ";";
     private static final SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 
-    private static int counter = 0;
+    private static int counter = 0; // счётчик ОБЩИЙ для всех заказов
 
     private final int id;
     private String content;
     private Date dueDate;
 
     public Order(String content, String date) throws ParseException {
-        this.id = ++counter;
+        this.id = ++counter; // сначала увеличиваем счётчик, потом его значение становится ID
         this.content = content;
         this.dueDate = formatter.parse(date);
     }
@@ -42,7 +47,13 @@ public class Order {
     }
 
     @Override
-    public String toString() { // использую для записи в файл
+    public String toString() { // используем для вывода на экран
+        return "=== Заказ # " + id + " ===\n" +
+                "Описание букета: " + content + "\n" +
+                "Дата доставки: " + formatter.format(dueDate) + "\n";
+    }
+
+    public String toCsvString() { // используем для записи в файл
         return id + SEP + content + SEP + formatter.format(dueDate);
     }
 
