@@ -1,4 +1,4 @@
-package hw46;
+package hw49;
 
 public class Main {
     public static void main(String[] args) {
