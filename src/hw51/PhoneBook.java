@@ -10,12 +10,7 @@ public class PhoneBook {
         people.add(person);
     }
     public boolean hasName(String name){
-        for (Person person : people){
-            if (person.getName().equals(name)){
-                return true;
-            }
-        }
-        return false;
+        return indexOfName(name) != -1;
     }
 
     /**
@@ -26,6 +21,25 @@ public class PhoneBook {
      */
     public int indexOfName(String name){
         for (int i = 0; i < people.size(); ++i){
+            if (people.get(i).getName().equals(name)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int indexOfPhone(String phone){
+        for (int i = 0; i < people.size(); ++i){
+            if (people.get(i).getPhone().equals(phone)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public boolean hasPhone(String phone){
+        return indexOfPhone(phone) != -1;
+    }
+    public int lastIndexOfName(String name){
+        for(int i = people.size() - 1; i >= 0; --i){
             if (people.get(i).getName().equals(name)){
                 return i;
             }
