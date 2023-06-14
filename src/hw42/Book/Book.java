@@ -39,4 +39,8 @@ public class Book implements Comparable<Book> {
         }
         return this.author.compareTo(other.author);
     }
+
+    public int getPages() {
+        return 0;
+    }
 }
