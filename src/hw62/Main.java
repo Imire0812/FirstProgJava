@@ -1,37 +1,43 @@
 package hw62;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
+
+    // методы
+    // статические
+    //   отдельный, логически завершённый, независимый фрагмент кода
+    //   примеры:
+    //   - корень из числа
+    //   - чтение списка из файла
+    //   - чтение экземпляра класса из файла или с клавиатуры
+    //
+    //   статические методы никак не зависят от отдельного экземпляра класса
+    //   если класс - автомобиль, то статический метод - что-то, что имеет отношение к
+    //   автомобилям в целом, но не к конкретному автомобилю
+    //   примеры:
+    //   - прочитать информацию об автомобиле из файла - статический метод,
+    //     никакого автомобиля пока нет
+    //   - записать информацию об автомобиле в файл - не статический метод,
+    //     записываем информацию о конкретном автомобиле
+    // не статические
+    //   отдельный, логически завершённый фрагмент кода, имеющий отношение к конкретному объекту
+    //   примеры:
+    //   - рассчитать стоимость пиццы
+    //   - сеттеры - изменение информации
+
+    // задача:
+    // Программа, работающая со списком студентов.
+    // Нужно уметь читать, редактировать, сохранять список студентов в файл.
+    // Редактировать список: добавлять, удалять, изменять информацию о студенте
     public static void main(String[] args) throws IOException {
-        List<Student> students = new ArrayList<>();
-        writeToFile(students, "res/students.txt");
-    }
+        // чтение из файла
+        StudentList students = new StudentList("res/students.csv", ';');
 
-    private static void writeToFile(List<Student> students, String fileName) throws IOException {
-        FileWriter fileWriter = new FileWriter(fileName);
-        for (Student student: students){
-            fileWriter.write(student.toString() + "\n");
-        }
-        fileWriter.close();
-    }
-    private static List<Student> readFromFile(String fileName) throws IOException{
-        Scanner scanner = new Scanner(new File(fileName));
-        List<Student> result = new ArrayList<>();
-        while (scanner.hasNext()){
-            result.add(Student.parse(scanner.nextLine()));
-        }
-        scanner.close();
-        return result;
-    }
-    private static List<Student> createStudentList(){
+        // вывод
+        students.print();
 
-        return null;
+        // запись в файл
+        students.writeToCsv();
     }
-
 }
