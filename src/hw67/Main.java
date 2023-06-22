@@ -21,11 +21,25 @@ public class Main {
     // Мы изучим только асинхронность.
     public static void main(String[] args) {
         System.out.println("Hello world!");
+        // 1-й способ - создание наследника класса Thread
         Thread thread = new MyThread();
+        // 2-й способ - создание класса Thread с экземпляром класса, реализующего
+        // интерфейс Runnable, в качестве аргумента конструктора
+        Runnable runnable = new MyOtherThread();
+        Thread otherThread = new Thread(runnable);
+        // 3-й способ - разновидность второго - использование лямбда-функции в качестве
+        // аргумента, реализующего интерфейс Runnable
+        Thread fourthThread = new Thread(() -> {
+            for (int i = 0; i < 100; ++i) {
+                System.out.println("Вывод из потока, описанного лямбда-функцией");
+            }
+        });
         thread.start(); // отдельный запуск потока, начнётся асинхронное выполнение thread.run()
-        while (thread.isAlive()) { // пока поток thread не закончит выполнение
-            System.out.println("Waiting...");
-        }
+        otherThread.start();
+        fourthThread.start();
+//    while (thread.isAlive()) { // пока поток thread не закончит выполнение
+//      System.out.println("Waiting...");
+//    }
         // здесь поток thread уже завершился
         for (int i = 0; i < 100; ++i) {
             System.out.println("Вывод в основном потоке");
